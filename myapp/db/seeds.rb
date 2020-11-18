@@ -14,4 +14,4 @@ tables = Table.create([
     {seats:2, position: 4}
 ])
 
-group = Group.create({num_people: 3})
+group = Group.create({num_people: 3, table_id:tables[0][:id]})

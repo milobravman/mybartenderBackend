@@ -10,48 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_174942) do
+ActiveRecord::Schema.define(version: 2020_11_18_200613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "drink_lists", force: :cascade do |t|
+  create_table "drink_groups", force: :cascade do |t|
     t.bigint "drink_id", null: false
     t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["drink_id"], name: "index_drink_lists_on_drink_id"
-    t.index ["group_id"], name: "index_drink_lists_on_group_id"
+    t.index ["drink_id"], name: "index_drink_groups_on_drink_id"
+    t.index ["group_id"], name: "index_drink_groups_on_group_id"
   end
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
     t.integer "price"
+    t.string "ingredients"
     t.string "instructions"
-    t.string "ingreadents"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "food_lists", force: :cascade do |t|
+  create_table "food_groups", force: :cascade do |t|
     t.bigint "food_id", null: false
     t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["food_id"], name: "index_food_lists_on_food_id"
-    t.index ["group_id"], name: "index_food_lists_on_group_id"
+    t.index ["food_id"], name: "index_food_groups_on_food_id"
+    t.index ["group_id"], name: "index_food_groups_on_group_id"
   end
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "price"
-    t.string "time"
+    t.integer "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "groups", force: :cascade do |t|
     t.integer "num_people"
+    t.integer "table_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_174942) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "drink_lists", "drinks"
-  add_foreign_key "drink_lists", "groups"
-  add_foreign_key "food_lists", "foods"
-  add_foreign_key "food_lists", "groups"
+  add_foreign_key "drink_groups", "drinks"
+  add_foreign_key "drink_groups", "groups"
+  add_foreign_key "food_groups", "foods"
+  add_foreign_key "food_groups", "groups"
 end

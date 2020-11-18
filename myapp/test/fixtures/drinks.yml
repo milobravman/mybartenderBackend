@@ -3,11 +3,11 @@
 one:
   name: MyString
   price: 1
+  ingredients: MyString
   instructions: MyString
-  ingreadents: MyString
 
 two:
   name: MyString
   price: 1
+  ingredients: MyString
   instructions: MyString
-  ingreadents: MyString
