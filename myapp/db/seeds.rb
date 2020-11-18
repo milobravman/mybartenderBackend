@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+tables = Table.create([
+    {seats: 4, position: 1 },
+    {seats: 4, position: 2},
+    {seats: 6, position: 3},
+    {seats:2, position: 4}
+])
+
+group = Group.create({num_people: 3})
