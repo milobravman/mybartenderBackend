@@ -1,0 +1,2 @@
+module DrinkGroupsHelper
+end
