@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :tables
   resources :groups
   resources :drinks
+  resources :drink_groups
 end

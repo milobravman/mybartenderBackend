@@ -26,3 +26,5 @@ drinks = Drink.create([
 ])
 
 group = Group.create({num_people: 3, table_id:tables[0][:id]})
+
+tab = DrinkGroup.create({group: group, drink: drinks[0]})
