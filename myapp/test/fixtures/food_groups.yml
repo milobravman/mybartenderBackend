@@ -3,7 +3,9 @@
 one:
   food: one
   group: one
+  status: MyString
 
 two:
   food: two
   group: two
+  status: MyString
