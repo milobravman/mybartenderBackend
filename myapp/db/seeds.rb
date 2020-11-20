@@ -26,6 +26,11 @@ drinks = Drink.create([
 
 ])
 
+food = Food.create([
+    {name: "Burger", price: 9, time: 10},
+    {name: "fries", price: 3, time: 5}
+])
+
 group = Group.create({num_people: 3, table_id:tables[0][:id]})
 
 tab = DrinkGroup.create([
@@ -33,4 +38,9 @@ tab = DrinkGroup.create([
     {group: group, drink: drinks[0]},
     {group: group, drink: drinks[1]},
     {group: group, drink: drinks[3]}
+])
+
+order = FoodGroup.create([
+    {group: group, food: food[0], status: "ordered"},
+    {group: group, food: food[1], status: "ordered"}
 ])

@@ -1,3 +1,3 @@
 class Table < ApplicationRecord
-    has_many :groups
+    has_one :group
 end
