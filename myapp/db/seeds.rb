@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+DrinkGroup.destroy_all
 Table.destroy_all
 Drink.destroy_all
 Group.destroy_all
@@ -27,4 +28,9 @@ drinks = Drink.create([
 
 group = Group.create({num_people: 3, table_id:tables[0][:id]})
 
-tab = DrinkGroup.create({group: group, drink: drinks[0]})
+tab = DrinkGroup.create([
+    {group: group, drink: drinks[0]},
+    {group: group, drink: drinks[0]},
+    {group: group, drink: drinks[1]},
+    {group: group, drink: drinks[3]}
+])
