@@ -17,11 +17,10 @@ class GroupsController < ApplicationController
 
     def create
 
-        group = Group.create(
+        @group = Group.create(
             num_people: params[:num_people],
-            table_id: params[:table_id]
-            )
-        render json: group.to_json()
+            table_id: params[:table_id])
+        render json: @group.to_json()
 
     end
 
