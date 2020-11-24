@@ -10,7 +10,6 @@ class FoodGroupsController < ApplicationController
     end
 
     def create 
-        byebug
         food = Food.find(params[:food_id])
         group = Group.find(params[:group_id])
 
