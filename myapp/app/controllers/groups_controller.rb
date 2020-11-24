@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-
+    skip_before_action :verify_authenticity_token, :only => [:create, :destroy]
     def index
 
         groups = Group.all
@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
     def show 
 
         group = Group.find(params[:id])
-        render json: group
+        render json: group.to_json(include: [:drinks, :foods, :table])
 
     end
 
@@ -24,6 +24,11 @@ class GroupsController < ApplicationController
 
     end
 
+
+    def destroy
+        group = Group.find(params[:id])
+        group.destroy
+    end
 
 
 end

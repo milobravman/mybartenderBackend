@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+FoodGroup.destroy_all
 DrinkGroup.destroy_all
 Table.destroy_all
 Drink.destroy_all
 Group.destroy_all
+Food.destroy_all
 
 tables = Table.create([
     {seats: 4, position: 1 },
