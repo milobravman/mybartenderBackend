@@ -37,7 +37,7 @@ drinks = Drink.create([
 food = Food.create([
     {name: "Hamburger", price: 9, time: 10},
     {name: "Cheeseburger", price: 9, time: 10},
-    {name: "Vegieburger", price: 8, time: 10},
+    {name: "Veggie Burger", price: 8, time: 10},
     {name: "Chicken Alfredo", price: 8, time: 12},
     {name: "Cheese Pizza", price: 11, time: 7},
     {name: "Side Salad", price: 5, time: 5},
