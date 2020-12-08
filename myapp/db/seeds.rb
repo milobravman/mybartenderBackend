@@ -22,6 +22,10 @@ tables = Table.create([
     {seats: 8, position: 6}
 ])
 
+group = Group.create ([
+    {num_people: 4, table_id: tables[0].id}
+])
+
 drinks = Drink.create([
     {name: "Margarita", price: 9, instructions: "half tequila half lime juice and triple sec", ingredients: "tequila, lime juice, triple sec, secret"},
     {name: "Moscow Mule", price: 10, instructions: "4 cups ginger beer, 2/3 cups lime juice, 1-1/4 cups vodka ", ingredients: "Ginger beer, lime juice, vodka"},
@@ -43,4 +47,11 @@ food = Food.create([
     {name: "Side Salad", price: 5, time: 5},
     {name: "Fries", price: 3, time: 5},
     {name: "Pasta Chips", price: 3, time: 5}
+])
+
+orders = FoodGroup.create([
+    {food: food[0], group: group[0], status: "ordered"},
+    {food: food[0], group: group[0], status: "ordered"},
+    {food: food[0], group: group[0], status: "ordered"},
+    {food: food[0], group: group[0], status: "ordered"}
 ])
