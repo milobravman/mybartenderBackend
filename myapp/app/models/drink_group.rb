@@ -1,4 +1,4 @@
 class DrinkGroup < ApplicationRecord
-  belongs_to :drink
   belongs_to :group
+  belongs_to :drink
 end
