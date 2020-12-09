@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-    belongs_to :table
+    belongs_to :table, optional: true
 
     has_many :drink_groups, dependent: :destroy
     has_many :drinks, through: :drink_groups
