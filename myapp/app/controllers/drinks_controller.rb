@@ -8,4 +8,6 @@ class DrinksController < ApplicationController
 
     end
 
+
+
 end

@@ -10,6 +10,13 @@ class DrinkGroupsController < ApplicationController
 
     end
 
+    def update
+
+        order = DrinkGroup.find(params[:id])
+        order.update(status: "delivered")
+
+    end
+
     def create 
         drink = Drink.find(params[:drink_id])
         group = Group.find(params[:group_id])

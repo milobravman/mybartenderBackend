@@ -9,6 +9,13 @@ class FoodGroupsController < ApplicationController
 
     end
 
+    def update
+
+        order = FoodGroup.find(params[:id])
+        order.update(status: "delivered")
+
+    end
+
     def create 
         food = Food.find(params[:food_id])
         group = Group.find(params[:group_id])

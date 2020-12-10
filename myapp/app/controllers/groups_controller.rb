@@ -15,6 +15,12 @@ class GroupsController < ApplicationController
 
     end
 
+    # def update
+
+        
+
+    # end
+
     def create
 
         @group = Group.create(
