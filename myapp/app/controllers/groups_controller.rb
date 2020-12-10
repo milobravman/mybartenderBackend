@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
     def show 
 
         group = Group.find(params[:id])
-        render json: group.to_json(include: [:drinks, :foods, :table])
+        render json: group.to_json(include: [{food_groups: {include: :food}},{drink_groups: {include: :drink}}, :table ])
 
     end
 
