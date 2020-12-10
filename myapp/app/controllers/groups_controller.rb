@@ -15,11 +15,12 @@ class GroupsController < ApplicationController
 
     end
 
-    # def update
-
+    def update
         
-
-    # end
+        group = Group.find(params[:id])
+        order.update(table_id: nil)
+    
+    end
 
     def create
 
