@@ -1,7 +1,7 @@
 class FoodGroupsController < ApplicationController
 
-    skip_before_action :verify_authenticity_token, :only => [:create]
-
+    skip_before_action :verify_authenticity_token, :only => [:create, :update]
+    
     def index
 
         orders = FoodGroup.all
@@ -9,10 +9,17 @@ class FoodGroupsController < ApplicationController
 
     end
 
+    def show
+
+        order = FoodGroup.find(params[:id])
+        render json: order.to_json()
+
+    end
+
     def update
 
         order = FoodGroup.find(params[:id])
-        order.update(status: "delivered")
+        order.update(status: params[:status])
 
     end
 

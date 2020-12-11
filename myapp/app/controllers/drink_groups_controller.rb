@@ -3,6 +3,7 @@ class DrinkGroupsController < ApplicationController
 
     skip_before_action :verify_authenticity_token, :only => [:create]
     
+    
     def index
 
         tab = DrinkGroup.all
@@ -24,6 +25,7 @@ class DrinkGroupsController < ApplicationController
         tab = DrinkGroup.create(
             drink: drink,
             group: group,
+            status: "ordered"
         )
     end
 
