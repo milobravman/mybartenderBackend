@@ -1,6 +1,6 @@
 class FoodGroupsController < ApplicationController
 
-    skip_before_action :verify_authenticity_token, :only => [:create, :update]
+    skip_before_action :verify_authenticity_token, :only => [:create, :update, :change_status]
     
     def index
 
@@ -16,10 +16,9 @@ class FoodGroupsController < ApplicationController
 
     end
 
-    def update
-
+    def change_status
         order = FoodGroup.find(params[:id])
-        order.update(status: params[:status])
+        order.update(status: "delivered")
 
     end
 

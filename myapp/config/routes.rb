@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :drink_groups
   resources :food_groups
   resources :foods
+
+
+  patch "/food_groups/:id/c", to: "food_groups#change_status", as: "change_status" 
+
 end
