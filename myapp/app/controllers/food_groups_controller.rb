@@ -1,6 +1,6 @@
 class FoodGroupsController < ApplicationController
 
-    skip_before_action :verify_authenticity_token, :only => [:create, :update, :change_status]
+    skip_before_action :verify_authenticity_token, :only => [:create, :change_status]
     
     def index
 

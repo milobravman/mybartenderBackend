@@ -1,7 +1,7 @@
 class DrinkGroupsController < ApplicationController
 
 
-    skip_before_action :verify_authenticity_token, :only => [:create]
+    skip_before_action :verify_authenticity_token, :only => [:create, :change_drink_status]
     
     
     def index
@@ -11,7 +11,7 @@ class DrinkGroupsController < ApplicationController
 
     end
 
-    def update
+    def change_drink_status
 
         order = DrinkGroup.find(params[:id])
         order.update(status: "delivered")
