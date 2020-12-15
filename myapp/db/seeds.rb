@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+#Deletes all the tables when running rails db:seed
 FoodGroup.destroy_all
 DrinkGroup.destroy_all
 Table.destroy_all
@@ -13,6 +15,8 @@ Drink.destroy_all
 Group.destroy_all
 Food.destroy_all
 
+
+#Creates tables for a spesific restaurant. Streatch feature is to give this responsibility to the front end so the app can be used for multipule restraurants
 tables = Table.create([
     {seats: 4, position: 1},
     {seats: 4, position: 2},
@@ -22,10 +26,8 @@ tables = Table.create([
     {seats: 8, position: 6}
 ])
 
-group = Group.create ([
-    {num_people: 4, table_id: tables[0].id}
-])
 
+#Creates Drink menu for a spesific restaurant. Streatch feature is to give this responsibility to the front end so the app can be used for multipule restraurants. Also streach feature would be connecting this to an API to get more value.
 drinks = Drink.create([
     {name: "Margarita", price: 9, instructions: "half tequila half lime juice and triple sec", ingredients: "tequila, lime juice, triple sec, secret"},
     {name: "Moscow Mule", price: 10, instructions: "4 cups ginger beer, 2/3 cups lime juice, 1-1/4 cups vodka ", ingredients: "Ginger beer, lime juice, vodka"},
@@ -38,6 +40,8 @@ drinks = Drink.create([
 
 ])
 
+
+#Creates Food for a spesific restaurant. Streatch feature is to give this responsibility to the front end so the app can be used for multipule restraurants
 food = Food.create([
     {name: "Hamburger", price: 9, time: 10},
     {name: "Cheeseburger", price: 9, time: 10},
@@ -49,9 +53,3 @@ food = Food.create([
     {name: "Pasta Chips", price: 3, time: 5}
 ])
 
-orders = FoodGroup.create([
-    {food: food[0], group: group[0], status: "ordered"},
-    {food: food[0], group: group[0], status: "ordered"},
-    {food: food[0], group: group[0], status: "ordered"},
-    {food: food[0], group: group[0], status: "ordered"}
-])
