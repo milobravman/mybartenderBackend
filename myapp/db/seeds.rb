@@ -27,6 +27,10 @@ tables = Table.create([
 ])
 
 
+# Testing creating a group without a table_id
+group = Group.create({num_people: 3})
+
+
 #Creates Drink menu for a spesific restaurant. Streatch feature is to give this responsibility to the front end so the app can be used for multipule restraurants. Also streach feature would be connecting this to an API to get more value.
 drinks = Drink.create([
     {name: "Margarita", price: 9, instructions: "half tequila half lime juice and triple sec", ingredients: "tequila, lime juice, triple sec, secret"},
