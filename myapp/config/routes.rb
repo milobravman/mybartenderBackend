@@ -13,6 +13,7 @@ Rails.application.routes.draw do
  # Unique routes to PATCH FoodGroup and DrinkGroup modles 
 
   patch "/food_groups/:id/c", to: "food_groups#change_status", as: "change_status"
-  patch "/drink_groups/:id/c", to: "drink_groups#change_drink_status", as: "change_drink_status" 
+  patch "/drink_groups/:id/c", to: "drink_groups#change_drink_status", as: "change_drink_status"
+  patch "/group/:id/c", to: "groups#change" as: "change_drink_status" 
 
 end

@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
         groups = Group.all
         render json: groups.to_json(include: [{food_groups: {include: :food}},{drink_groups: {include: :drink}}, :table ])
-#include: {users: {include: :profile} })
+    #include: {users: {include: :profile} })
     end
     #include: [:drinks, :foods]
 
