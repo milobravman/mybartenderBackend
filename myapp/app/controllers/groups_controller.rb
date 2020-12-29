@@ -15,8 +15,7 @@ class GroupsController < ApplicationController
 
     end
 
-    def update
-        
+    def archive_group
         group = Group.find(params[:id])
         order.update(table_id: nil)
     
