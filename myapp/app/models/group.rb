@@ -8,7 +8,7 @@ class Group < ApplicationRecord
     has_many :drinks, through: :drink_groups
 
     # Same idea with Food here if Sam's group has a pizza that is recoured as a food_group. 
-    # It is possible that the wat these tables are set up the has_many :foods is not nessisary. 
+    # It is possible that the way these tables are set up the has_many :foods is not nessisary. 
     has_many :food_groups, dependent: :destroy
     has_many :foods, through: :food_groups
 end
